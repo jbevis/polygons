@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "^4.15.4",
     "knex": "^0.13.0",
+    "pg": "^7.3.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
