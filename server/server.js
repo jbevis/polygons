@@ -47,8 +47,8 @@ app.delete('/locations:id', (request, response) => {
 	.catch(error => response.status(500).send({ error }));
 });
 
-const portNumber = process.env.PORT || 3000;
+const portNumber = process.env.PORT || 3001;
 
 app.listen(portNumber, () => {
-	console.log('Server is running at port 3000')
+	console.log('Server is running at port 3001')
 });
