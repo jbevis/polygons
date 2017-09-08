@@ -1,21 +1,36 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
+import PropTypes from 'prop-types';
+import Map from '../components/Map';
 import '../styles/App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+
+  componentDidMount() {
+    this.getLocations();
   }
-}
+
+  getLocations() {
+    this.props.fetchLocations();
+  }
+  
+  render() {
+    const { coordinates, currentCoordinates } = this.props;
+
+    return (
+      <section className='App'>
+        <h1 className='header'>Polygon Map</h1>
+        <Map coordinates={ coordinates }
+             currentCoordinates={ currentCoordinates } />
+      </section>
+    );
+  };
+};
+
+App.propTypes = {
+  fetchLocations: PropTypes.func.isRequired,
+  locations: PropTypes.arrayOf(PropTypes.object).isRequired,
+  coordinates: PropTypes.arrayOf(PropTypes.array).isRequired,
+  currentCoordinates: PropTypes.arrayOf(PropTypes.number).isRequired
+};
 
 export default App;
