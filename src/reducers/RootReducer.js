@@ -4,9 +4,9 @@ import Coordinates from './CoordinatesReducer';
 import CurrentCoordinates from './CurrentCoordinatesReducer';
 
 const RootReducer = combineReducers({
-	Locations,
-	Coordinates,
-	CurrentCoordinates
+  Locations,
+  Coordinates,
+  CurrentCoordinates
 });
 
 export default RootReducer;
