@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Map from '../components/Map';
+import PolygonMap from '../components/PolygonMap';
 import '../styles/App.css';
 
 class App extends Component {
@@ -19,8 +19,8 @@ class App extends Component {
     return (
       <section className='App'>
         <h1 className='header'>Polygon Map</h1>
-        <Map coordinates={ coordinates }
-             currentCoordinates={ currentCoordinates } />
+        <PolygonMap coordinates={ coordinates }
+                    currentCoordinates={ currentCoordinates } />
       </section>
     );
   };
