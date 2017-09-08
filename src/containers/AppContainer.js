@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchAllLocations } from '../actions/index';
+import { fetchLocations } from '../actions/index';
 import App from '../components/App';
-import '../syles/App.css';
+import '../styles/App.css';
 
 const mapStateToProps = (state) => {
 	return {
@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators({ fetchAllLocations }, dispatch);
+	return bindActionCreators({ fetchLocations }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

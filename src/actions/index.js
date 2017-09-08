@@ -10,7 +10,7 @@ const saveAllLocations = (locations) => {
 const saveCoordinates = (coordinates) => {
   return {
     type: 'SAVE_COORDINATES',
-    data: locations
+    data: coordinates
   };
 };
 
@@ -26,11 +26,11 @@ const fetchLocations = () => {
     return fetch('/locations', {
       headers: {
         'Content-Type': 'application/json',
-        Accept: 'application/json'
-      }
+        Accept: 'application/json',
+      },
     })
     .then(locations => locations.json())
-    .then(json => dispatch(saveAllLocations(json));
+    .then(json => dispatch(saveAllLocations(json)))
   };
 };
 
@@ -42,10 +42,10 @@ const saveNewLocation = (location) => {
         'Content-Type': 'application/json',
         Accept: 'application/json'
       },
-      body: JSON.stringify(location)
+      body: JSON.stringify(location),
     })
     .then(response => response.json())
-    .then(() => dispatch(fetchLocations()));
+    .then(() => dispatch(fetchLocations()))
   };
 };
 
