@@ -1,4 +1,4 @@
-require ('isomorphic-fetch');
+import fetch from 'isomorphic-fetch';
 
 const saveAllLocations = (locations) => {
   return {

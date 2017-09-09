@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MapPin from './MapPin';
 
-const MapMarkers - ({ locations, saveCoordinates }) => {
+const MapMarkers = ({ locations, saveCoordinates }) => {
   const markerArray = locations.map((marker, i) => {
     return (
       <MapPin key={ i }
