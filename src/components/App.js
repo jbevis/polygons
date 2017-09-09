@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PolygonMap from '../components/PolygonMap';
+import InputContainer from '../containers/InputContainer';
 import '../styles/App.css';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
     return (
       <section className='App'>
         <h1 className='header'>Polygon Map</h1>
+        <InputContainer />
         <PolygonMap coordinates={ coordinates }
                     currentCoordinates={ currentCoordinates } />
       </section>

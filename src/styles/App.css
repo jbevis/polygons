@@ -1,11 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.header {
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
   background-color: #222;
-  height: 75px;
+  height: 150px;
   padding: 20px;
   color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.map {
+  height: 100vh;
+}
+
+label{
+  display: block;
+  margin: 20px;
+}
+
+input {
+  margin: 10px;
+  padding: 5px;
+}
+
+.form {
+  width: 28%;
+  max-width: 300px;
+  position: fixed;
+  overflow-y: auto;
+  z-index: 999;
+  height: 100%;
+  padding-top: 65px;
+  background-color: rgba(175, 175, 175, 0.5);
+}
+
+.form label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #058fb2;
+  font-weight: bold;
+}
+
+.form input {
+  border-style: none;
+  border-radius: 2px;
+}
+
+.form button {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding: 8px 0;
+  background-color: #058fb2;
+  border-style: none;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.form button:hover {
+  background-color: #017694;
+}
+
+.error {
+  width: 90%;
+  margin: 15px auto;
+  padding: 8px 5px;
+  background-color: #febabb;
+  color: #de3745;
+  border: 1px solid #de3745;
+  border-radius: 2px;
 }
 
