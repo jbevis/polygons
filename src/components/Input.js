@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class Input extends Component {
   constructor() {
-    super(props);
+    super();
     this.state = {
       error: ''
     };
@@ -85,8 +85,8 @@ class Input extends Component {
 }
 
 Input.propTypes = {
-  saveNewLocation.PropTypes.func.isRequired,
-  setCurrentCoordinates.PropTypes.func.isRequired
+  saveNewLocation: PropTypes.func.isRequired,
+  setCurrentCoordinates: PropTypes.func.isRequired
 };
 
 export default Input;
