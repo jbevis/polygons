@@ -9,8 +9,7 @@ class Input extends Component {
     };
   }
 
-  submitInfo(e, data) {
-    e.preventDefault();
+  submitInfo(data) {
     this.validateInput(data);
   };
 
@@ -45,7 +44,7 @@ class Input extends Component {
     const { error } = this.state;
 
     return (
-      <form className='form'>
+      <div className='form'>
         <label className='form-label'>
           Placename:
           <input type='text'
@@ -71,15 +70,15 @@ class Input extends Component {
           />
         </label>
         <button type='submit'
-                onClick={(e) => this.submitInfo(e, {
-                  name: this.value.name,
-                  lat: this.value.lat,
-                  long: this.value.long
+                onClick={() => this.submitInfo({
+                  name: this.name.value,
+                  lat: this.lat.value,
+                  long: this.long.value
                 })}>
           Submit
         </button>
         { error && <p className="error">{ error }</p>}
-      </form>
+      </div>
     );
   }
 }
