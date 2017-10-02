@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Map, TileLayer, ZoomControl, Polygon } from 'react-leaflet';
 import MapMarkersContainer from '../containers/MapMarkersContainer';
-// import { mapKey } from '../../db/token';
+import { mapKey } from '../token';
 
 class PolygonMap extends Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class PolygonMap extends Component {
   render() {
     const { center, zoom } = this.state;
     const { coordinates, currentCoordinates } = this.props;
+    const mapTile = `https://api.mapbox.com/styles/v1/jbevis/cj3nsstkt002a2smjv4p84sjc/tiles/256/{z}/{x}/{y}?access_token=${ mapKey }`;
 
     return (
       <section id="map-container">
@@ -27,7 +28,7 @@ class PolygonMap extends Component {
              zoom={ currentCoordinates.length ? 5 : zoom }
              maxBounds={ [[180, -180], [-180, 180]] }
         >
-          <TileLayer url='https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiamJldmlzIiwiYSI6ImNqN2F1NTk0ZjBqdTMycW56ajUzd3htcXgifQ.WOgRawrPYgDpHuF-C5gbPA'
+          <TileLayer url={ mapTile }
                      attribution='Map data &copy; <a href="https://mapbox.com"> Mapbox</a> contributors'
                      maxZoom={ 10 }
                      minZoom={ 2 }
